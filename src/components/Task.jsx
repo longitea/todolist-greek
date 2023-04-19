@@ -8,8 +8,6 @@ export const TaskContext = createContext();
 
 export default function Task({ id }) {
   const [tasks, setTasks] = useState([]);
-  const long = tasks.filter((task) => task.completed).length
-  console.log(long);
 
   useEffect(() => {
     if (id) {
@@ -46,7 +44,6 @@ export default function Task({ id }) {
 
   const taskSort = sortArray(tasks);
   const setTask = (taskList) => {
-    console.log("Tôi nằm ở Task.jsx - " + taskList);
     setTasks(taskList);
   };
 

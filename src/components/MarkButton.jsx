@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useState } from "react";
 import { TaskContext } from "./Task";
 import { Button } from "antd";
 
@@ -22,12 +22,7 @@ export default function MarkButton(props) {
 
 
   const taskSort = useContext(TaskContext);
-
-  // if(props) {
-  //     const id = props.task.id;
-  // }
   const id = props?.task.id;
-  console.log(id);
 
   const updateSuccess = () => {
     let result = taskSort.map((task) => {
@@ -39,9 +34,6 @@ export default function MarkButton(props) {
         return task;
       }
     });
-
-    console.log(result);
-
     props.setTask(result);
   };
 
@@ -51,7 +43,7 @@ export default function MarkButton(props) {
         completed: true,
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         if (response.status == 200) {
           updateSuccess();
         }
@@ -68,7 +60,6 @@ export default function MarkButton(props) {
     //   .then((response) => { response.json() })
     //   .then((json) => console.log(json));
 
-    console.log(result);
   };
 
   const handleClick = () => {
