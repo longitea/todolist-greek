@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import HeaderLayout from "../components/header";
 import { Layout } from "antd";
+import HeaderLayout from "../components/header";
 
 const layoutStyle = {
   display: "flex",
